@@ -1,7 +1,7 @@
+require('dotenv').load()
 const BotClient = require('./struct/BotClient')
 const client = new BotClient()
 
-const { token } = require('./auth.json')
-client.start(token)
+client.start(process.env.TOKEN)
 
 process.on('unhandledRejection', err => console.error(err)) // eslint-disable-line no-console
